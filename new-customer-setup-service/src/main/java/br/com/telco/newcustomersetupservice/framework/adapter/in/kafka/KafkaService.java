@@ -12,7 +12,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-import br.com.telco.newcustomersetupservice.framework.port.in.ConsumerFunction;
+import br.com.telco.newcustomersetupservice.application.port.in.ConsumerFunction;
 
 public class KafkaService<T> implements Closeable {
 
@@ -55,7 +55,7 @@ public class KafkaService<T> implements Closeable {
 		properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
 		properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG, UUID.randomUUID().toString());
 		properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
-		//properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+		properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 		properties.setProperty(GsonDeserializer.TYPE_CONFIG, type.getName());
 		return properties;
 	}

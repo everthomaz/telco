@@ -5,9 +5,9 @@ import java.io.IOException;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.springframework.stereotype.Service;
 
+import br.com.telco.newcustomerconsumerservice.application.port.in.CustomerServiceUseCase;
 import br.com.telco.newcustomerconsumerservice.domain.Customer;
 import br.com.telco.newcustomerconsumerservice.framework.adapter.in.kafka.KafkaService;
-import br.com.telco.newcustomerconsumerservice.framework.port.in.CustomerServiceUseCase;
 
 @Service
 public class CustomerService implements CustomerServiceUseCase {

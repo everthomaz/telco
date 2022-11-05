@@ -22,15 +22,16 @@ public class NewCustomerServiceController {
 	private NewCustomerUseCase newCustomerUseCase;
 	
 	@PostMapping(value = "/customer", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Customer> createNewCustomer(
+	public void createNewCustomer(
 			//@RequestHeader(value = "Authorization") String jwt
 			//,
 			//@PathVariable(value = "xxx") String xxx
 			@RequestBody Customer customer
 			) throws InterruptedException, ExecutionException, IOException
 			{
-		var response =  newCustomerUseCase.createNewCustomer(customer);
-		return ResponseEntity.ok().body(response);
+		newCustomerUseCase.createNewCustomer(customer);
+		//var response =  newCustomerUseCase.createNewCustomer(customer);
+		//return (ResponseEntity<Customer>) ResponseEntity.ok();
 	}
 	
 }

@@ -17,12 +17,12 @@ public class NewCustomerUseCaseImpl implements NewCustomerUseCase {
 	private NewCustomerPublisherOut newCustomerPublisherOut;
 	
 	@Override
-	public Customer createNewCustomer(Customer customer) throws InterruptedException, ExecutionException, IOException {
+	public void createNewCustomer(Customer customer) throws InterruptedException, ExecutionException, IOException {
 		
 		newCustomerPublisherOut.publish(customer);
 		
 		System.out.println("OK");
-		return null;
+		//return customer;
 	}
 	
 }

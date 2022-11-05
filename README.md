@@ -25,8 +25,10 @@ Porque o método poll consumiria os 500 records (registros) e caso 1 ocorra erro
 Através do método poll.
 
 ### Ref. consumir mensagens antigas:
-Coloquei a seguinte configuração para consumir mensagens antigas (porém não funcionou):
+Coloquei a seguinte configuração para consumir mensagens antigas:
 properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-Para novas mensagens:
+Obs.: O GROUP_ID precisa ser novo para a configuração com "earliest" funcionar.
+
+Para novas mensagens, que é o default:
 properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "latest");

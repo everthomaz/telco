@@ -3,11 +3,11 @@ package br.com.telco.newcustomersetupservice.framework.adapter.in.kafka;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import br.com.telco.newcustomersetupservice.framework.port.in.CustomerServiceUseCase;
+import br.com.telco.newcustomersetupservice.application.port.in.CustomerServiceUseCase;
 
-@Component
+@Service
 public class AdapterIn {
 	
 	@Autowired

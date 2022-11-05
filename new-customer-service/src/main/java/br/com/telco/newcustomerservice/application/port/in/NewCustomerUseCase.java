@@ -7,6 +7,6 @@ import br.com.telco.newcustomerservice.domain.Customer;
 
 public interface NewCustomerUseCase {
 	
-	Customer createNewCustomer(Customer customer) throws InterruptedException, ExecutionException, IOException;
+	void createNewCustomer(Customer customer) throws InterruptedException, ExecutionException, IOException;
 	
 }
